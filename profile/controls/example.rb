@@ -20,4 +20,13 @@ control 'tmp-1.0' do                        # A unique ID for this control
   it { should be_file}
 
   end
+  describe docker.containers.where { names == 'hello-world' } do
+  it { should be_running }
+  its('images') { should_not include 'u12:latest' }
+  it { should exist }
+end
+describe docker.version do
+  its('Server.Version') { should eq '18.03.1-ce'}
+  its('Client.Version') { should eq  '1.12'}
+end
 end
