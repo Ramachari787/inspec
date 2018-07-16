@@ -17,7 +17,7 @@ control 'tmp-1.0' do                        # A unique ID for this control
   #  it { should be_directory }
   #end
   describe file('C:\Users\i326645\Downloads\test.txt') do
-  it { should be_file}
+  it { should exist}
 
   end
   describe docker.containers.where { names == 'hello-world' } do
