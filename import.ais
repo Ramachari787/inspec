@@ -1,0 +1,8 @@
+imports dslVersion:"1.2", { 
+println "importing artifacts - runtime was:" + buildRuntime + " - version: " + buildVersion
+    
+    targetRootDir id: "default", {
+        artifactFile "com.sap.clm.sl.actions:kafka-domain-model:jar:1.0.0"
+        
+    }
+}
